@@ -292,3 +292,11 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
 -include vendor/xiaomi/sdm660-common/BoardConfigVendor.mk
+
+PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8998/display
+PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8998/audio
+PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8998/media
+
+# PesAnlok
+
+TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := true
