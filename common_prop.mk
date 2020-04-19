@@ -145,25 +145,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.video.disable.ubwc=1 \
-    vendor.display.enable_default_color_mode=0 \
+    vendor.display.enable_default_color_mode=1 \
     video.disable.ubwc=1
-
-# The default sf phase offset is set to 6ms, to avoid it be included into next
-# vsync threshold, set high fps early sf and next vsync threshold phase offset
-# to 6.1ms, which is bigger than all sf phase offsets in normal frame rate.
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.high_fps_early_phase_offset_ns=6100000 \
-    debug.sf.high_fps_early_gl_phase_offset_ns=9000000 \
-    debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
-
-# FIFO scheduling for UI
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.use_fifo_ui=1
-
-# Fling
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min.fling_velocity=160 \
-    ro.max.fling_velocity=20000
 
 # GMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -285,15 +268,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
-    
-# Rendering
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=1 \
-    debug.enable.sglscale=1 \
-    debug.sf.disable_hwc=0 \
-    debug.sf.gpu_comp_tiling=1 \
-    debug.sf.recomputecrop=0 \
-    persist.hwc.ptor.enable=true
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -315,7 +289,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
 #Storaged
- PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.storaged.event.interval=99999
 
 # System restart
