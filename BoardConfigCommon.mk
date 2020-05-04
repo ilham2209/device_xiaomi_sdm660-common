@@ -235,6 +235,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 PROTOBUF_SUPPORTED := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
+TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
