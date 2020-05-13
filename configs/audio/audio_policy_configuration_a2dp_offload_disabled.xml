@@ -64,11 +64,7 @@
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="raw" role="source"
-<<<<<<< HEAD
-                        flags="AUDIO_OUTPUT_FLAG_FAST">
-=======
                         flags="AUDIO_OUTPUT_FLAG_FAST|AUDIO_OUTPUT_FLAG_RAW">
->>>>>>> 840b2b8e... sdm660-common: Fix A2DP when offload is disabled
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
@@ -334,8 +330,7 @@
 
         </module>
 
-<<<<<<< HEAD
-=======
+
         <!-- A2DP Audio HAL -->
         <module name="a2dp" halVersion="2.0">
             <mixPorts>
@@ -358,7 +353,7 @@
             </routes>
         </module>
 
->>>>>>> 840b2b8e... sdm660-common: Fix A2DP when offload is disabled
+
         <!-- Usb Audio HAL -->
         <module name="usb" halVersion="2.0">
             <mixPorts>
@@ -379,23 +374,12 @@
             </routes>
         </module>
 
-<<<<<<< HEAD
-        <!-- A2DP Input Audio HAL -->
-        <xi:include href="/vendor/etc/a2dp_in_audio_policy_configuration.xml"/>
-=======
         <!-- Bluetooth Audio HAL -->
         <xi:include href="/vendor/etc/bluetooth_qti_audio_policy_configuration.xml"/>
->>>>>>> 840b2b8e... sdm660-common: Fix A2DP when offload is disabled
 
         <!-- Remote Submix Audio HAL -->
         <xi:include href="/vendor/etc/r_submix_audio_policy_configuration.xml"/>
 
-<<<<<<< HEAD
-        <!-- Bluetooth Audio HAL -->
-        <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration.xml"/>
-
-=======
->>>>>>> 840b2b8e... sdm660-common: Fix A2DP when offload is disabled
     </modules>
     <!-- End of Modules section -->
 
