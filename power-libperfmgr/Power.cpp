@@ -229,6 +229,7 @@ Return<void> Power::setFeature(Feature feature, bool activate)  {
 #ifdef TAP_TO_WAKE_NODE
         case Feature::POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
             ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE);
+            ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE2);
             break;
 #endif
         default:
