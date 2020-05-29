@@ -33,11 +33,7 @@
 #include "display-helper.h"
 
 #ifndef TAP_TO_WAKE_NODE
-#define TAP_TO_WAKE_NODE "/proc/nvt_wake_gesture"
-#endif
-
-#ifndef TAP_TO_WAKE_NODE2
-#define TAP_TO_WAKE_NODE2 "/proc/touchscreen/enable_dt2w"
+#define TAP_TO_WAKE_NODE "/sys/touchpanel/double_tap"
 #endif
 
 #ifndef TAP_TO_WAKE_NODE3
@@ -233,7 +229,6 @@ Return<void> Power::setFeature(Feature feature, bool activate)  {
 #ifdef TAP_TO_WAKE_NODE
         case Feature::POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
             ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE);
-            ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE2);
             break;
 #endif
         default:
