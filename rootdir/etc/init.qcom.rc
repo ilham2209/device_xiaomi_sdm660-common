@@ -600,11 +600,12 @@ service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.sensors /vendor/bin/sscrpcd sensorspd
-    class early_hal
-    user system
-    group system wakelock
-    capabilities BLOCK_SUSPEND
+service vendor.ipacm /system/vendor/bin/ipacm
+    class main
+    user radio
+    group radio inet
+    disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class main
